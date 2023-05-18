@@ -24,6 +24,9 @@ app.use(helmet({
   dnsPrefetchControl: false
 }));
 
+bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
+  /*Store hash in your db*/
+});
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
