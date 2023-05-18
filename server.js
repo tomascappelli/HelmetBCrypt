@@ -37,7 +37,10 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 //START_SYNC
 
-
+let hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+console.log(hash);
+let result = bcrypt.compareSync(myPlaintextPassword, hash);
+console.log(result);
 
 //END_SYNC
 
