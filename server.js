@@ -8,6 +8,23 @@ const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
 
+const helmet = require('helmet');
+const bcrypt = require('bcrypt');
+
+
+app.use(helmet({
+  frameguard: {         
+    action: 'deny'
+  },
+  contentSecurityPolicy: { 
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'",'trusted-cdn.com'],
+    }
+  },
+  dnsPrefetchControl: false
+}));
+
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
